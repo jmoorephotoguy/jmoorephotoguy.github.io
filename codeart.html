@@ -137,37 +137,88 @@ h1 {
 	James William Moore</h1>
 <hr>
 
-<h2>Glitch Art</h2>
+<h2>Code as Art</h2>
 <p></p>
 
 <!-- Portfolio Gallery Grid -->
 <div class="row">
   <div class="column">
     <div class="content">
-      <img src="images/glitch/abstractofcocktail1.png" alt="Abstract of Cocktails" style="width:100%">
-      <h3>Abstract of Cocktails 1</h3>
-      <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
+      <img src="images/codeart/codeart1.png" alt="Abstract of Cocktails" style="width:100%">
+      <h3>Code as Art 1</h3>
+      <p></p>
     </div>
   </div>
   <div class="column">
     <div class="content">
-    <img src="images/glitch/abstractofcockatail2.png" alt="Abstract of Cocktails" style="width:100%">
-      <h3>Abstract of Cocktails 2</h3>
-      <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
+    <img src="images/codeart/codeart2.png" alt="Abstract of Cocktails" style="width:100%">
+      <h3>Code as Art 2</h3>
+      <p></p>
     </div>
   </div>
   <div class="column">
     <div class="content">
-    <img src="images/glitch/asbstractofcocktail3.png" alt="Nature" style="width:100%">
-      <h3>Abstract of Cocktails 3</h3>
-      <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
+    <img src="images/codeart/codeart3.png" alt="Nature" style="width:100%">
+      <h3>Code as Art 3</h3>
+      <p></p>
     </div>
   </div>
   <div class="column">
     <div class="content">
-    <img src="images/glitch/frogprince.png" alt="Mountains" style="width:100%">
-      <h3>Glitchy Frog Prince</h3>
-      <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
+    
+      <h3>Processing 3 Code</h3>
+      <p>void setup() {
+  
+  size (600, 600);
+  noFill();
+  stroke(255);
+  strokeWeight(2);
+  
+}
+
+float t = 0;
+float z = 0;
+
+void draw() {
+  background (0); // black background
+  
+  translate (width / 2, height /2); // space start in middle
+  
+  beginShape ();
+  fill( random(255), random(255), random(255), random(255));
+  
+  for (float theta = 0; theta <= 2 * PI; theta += 0.01) {
+    float rad = r(theta, 
+    mouseX / 100, // 1 a left & right
+    mouseY / 100, // 1 b up & down
+    t / 2, // 0 m number of "points"
+    1, // 1 n1 smoothness
+    sin(t) * 0.7 + 0.7,  // 1 n2
+    cos(t) * 0.7 + 0.7); // 1 n3
+    
+   
+    
+ 
+    float x = rad * cos(theta) * 50;
+    float y = rad * sin(theta) * 50;
+    vertex(x, y);
+  }
+  
+  
+  endShape ();
+  
+  t += 0.1;
+  z += 0.001;
+}  
+
+
+float r(float theta, float a, float b, float m, float n1, float n2, float n3) {
+  
+  //superformula
+  
+  return  pow(pow(abs(cos(m * theta / 4.0) / a), n2) + pow(abs(sin(m * theta / 4.0) / b), n3), -1.0 / n1);
+  
+}  </p>
     </div>
   </div>
 <!-- END GRID -->
